@@ -11,12 +11,15 @@ class App extends React.Component{
   }
 
   addItem = () =>{
-    var item = prompt('Enter Item Name? ');
-    var itemsArray = this.state.items.slice();
-    itemsArray.push(item);
-    this.setState({
-      items:itemsArray
-    });
+    var item;
+    if(item = prompt('Enter Item Name? ')){
+      var itemsArray = this.state.items.slice();
+      itemsArray.push(item);
+      this.setState({
+        items:itemsArray
+      });
+    }
+    
   }
 
   removeItem = (event) =>{
